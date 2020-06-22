@@ -13,5 +13,30 @@ h4 {
 }
 
 div {
+    background-color: rgb(210, 207, 30);
+    float: left;
+    margin: 20px;
+}
+
+.ContactBar{
     border-color: black;
+    border-style: dashed;
+    float: inline-end;
+}
+.Contact {
+    width: 70px;
+    height: 25px;
+}
+#Twitter {
+   border: 5px rgb(4, 117, 23) groove;
+
+}
+
+#Github {
+    border: 5px rgb(6, 5, 63) groove;
+
+}
+
+#Kaggle {
+    border: 5px rgb(117, 12, 4) groove;
 }
