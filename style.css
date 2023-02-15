@@ -1,25 +1,25 @@
 body {
-    background-color: aquamarine;
+    background-color: rgb(201, 235, 223);
 }
 
 h3 {
-    color: tomato;
+    color: rgb(197, 33, 5);
     text-align: center;
 }
 
 h4 {
-    color: yellow;
+    color: rgb(138, 138, 110);
 
 }
 
 div {
-    background-color: rgb(210, 207, 30);
+    background-color: rgb(102, 100, 2);
     float: left;
     margin: 20px;
 }
 
 .ContactBar{
-    border-color: black;
+    border-color: rgb(37, 34, 34);
     border-style: dashed;
     float: inline-end;
 }
@@ -28,15 +28,15 @@ div {
     height: 25px;
 }
 #Twitter {
-   border: 5px rgb(4, 117, 23) groove;
+   border: 5px rgb(11, 138, 211) groove;
 
 }
 
 #Github {
-    border: 5px rgb(6, 5, 63) groove;
+    border: 5px rgba(63, 62, 70, 0.233) groove;
 
 }
 
 #Kaggle {
-    border: 5px rgb(117, 12, 4) groove;
+    border: 5px rgb(38, 16, 167) groove;
 }
