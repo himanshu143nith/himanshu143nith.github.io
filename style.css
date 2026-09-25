@@ -40,6 +40,20 @@ a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
 button, input, textarea { font: inherit; }
 
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+  padding: 0.7rem 1rem;
+  border-radius: 0.5rem;
+  background: var(--accent);
+  color: #fff;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
 .background-glow {
   position: fixed;
   width: 430px;
