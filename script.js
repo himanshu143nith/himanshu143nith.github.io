@@ -2,6 +2,8 @@ const root = document.documentElement;
 const themeToggle = document.getElementById('theme-toggle');
 const navToggle = document.getElementById('nav-toggle');
 const mainNav = document.getElementById('main-nav');
+const searchToggle = document.getElementById('search-toggle');
+const scrollToTopBtn = document.getElementById('scroll-to-top');
 const savedTheme = localStorage.getItem('theme');
 
 if (savedTheme === 'light' || savedTheme === 'dark') {
@@ -13,6 +15,7 @@ function updateThemeButton() {
 
   const light = root.dataset.theme === 'light';
   themeToggle.setAttribute('aria-label', light ? 'Switch to dark theme' : 'Switch to light theme');
+  themeToggle.title = light ? 'Switch to dark theme' : 'Switch to light theme';
   themeToggle.innerHTML = `<i class="fa-solid fa-${light ? 'moon' : 'sun'}" aria-hidden="true"></i>`;
 }
 
@@ -64,6 +67,27 @@ if (navToggle && mainNav) {
 
   window.matchMedia('(min-width: 761px)').addEventListener('change', (event) => {
     if (event.matches) closeNavigation();
+  });
+}
+
+if (searchToggle) {
+  searchToggle.addEventListener('click', () => {
+    document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' });
+    searchToggle.blur();
+  });
+}
+
+if (scrollToTopBtn) {
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+      scrollToTopBtn.classList.add('visible');
+    } else {
+      scrollToTopBtn.classList.remove('visible');
+    }
+  });
+
+  scrollToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
 
