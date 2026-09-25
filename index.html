@@ -1,47 +1,96 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-theme="dark">
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Himanshu Sharma</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Himanshu Sharma | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <h3>Welcome to my page.</h3>
-    <hr></hr>
-    <h4>About me</h4>
-    <p>Himanshu Sharma is a software engineer having 3 years of experience of Data Engineering and Data Science. He has previously worked on multiple software projects related to data science and software programming. He likes to code in Python. He also has experience in other essentials like databases, Cloud Services, DevOps, Soft Computing, Internet of Things, AI, Web Developemnt (Intermediate) etc.</p>
-    <hr></hr>
-    <h4>Projects</h4>
-    <ol>
-        <li>Connected Factory Solution</li>
-        <li>Enterprise ChatBot on Azure Bot Services</li>
-        <li>Python based recomendation engine for manufacturing plant</li>
-        <li>PowerBI Dashboarding</li>
-        <li>Python based real-time dashboards.</li>
-    </ol>
-    <hr></hr>
-    <h4>Currently working on</h4>
-    <ul>
-        <li>Web Development technologies</li>
-        <li>Data Science Projects on Kaggle</li>
-        <li>CI/CD Pipelines</li>
-        <li>Github Actions and Docker</li>
-        <li>Github codespaces</li>
-    </ul>
-    <hr></hr>
-    <h4>Links</h4>
-    <div class="ContactBar">
-        <div class="Contact" id="Twitter">
-            <button id = twitterButton>Twitter</button>
-        </div>
-        <div id="Github" class="Contact">
-            <button id = githubButton>Github</button>
-        </div>
-        <div id="Kaggle" class="Contact">
-            <button id = kaggleButton>Kaggle</button>
-        </div>
+
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
+        <i class="fa-solid fa-moon"></i>
+    </button>
+
+    <div class="container">
+        <!-- Header / Hero Section -->
+        <header class="animate-on-scroll">
+            <h1>Himanshu Sharma</h1>
+            <p class="subtitle">Software Engineer | Data Engineering & Data Science</p>
+        </header>
+
+        <!-- About Me / Career Objective -->
+        <section id="objective" class="animate-on-scroll">
+            <h2><i class="fa-solid fa-user-gear"></i> About Me</h2>
+            <div class="card">
+                <p>Himanshu Sharma is a software engineer with 3 years of experience in Data Engineering and Data Science. He has previously worked on multiple software projects related to data science and software programming. He likes to code in Python and has extensive experience with databases, Cloud Services, DevOps, Soft Computing, Internet of Things, AI, and Web Development.</p>
+            </div>
+        </section>
+
+        <!-- Skills & Technologies -->
+        <section id="technologies" class="animate-on-scroll">
+            <h2><i class="fa-solid fa-code"></i> Technologies & Expertise</h2>
+            <div class="skills-grid">
+                <span class="skill-tag"><i class="fa-brands fa-python"></i> Python</span>
+                <span class="skill-tag"><i class="fa-solid fa-database"></i> Databases</span>
+                <span class="skill-tag"><i class="fa-solid fa-cloud"></i> Cloud Services & Azure</span>
+                <span class="skill-tag"><i class="fa-solid fa-infinity"></i> DevOps & CI/CD</span>
+                <span class="skill-tag"><i class="fa-brands fa-docker"></i> Docker</span>
+                <span class="skill-tag"><i class="fa-solid fa-brain"></i> AI & Data Science</span>
+                <span class="skill-tag"><i class="fa-solid fa-microchip"></i> Internet of Things (IoT)</span>
+                <span class="skill-tag"><i class="fa-brands fa-github"></i> GitHub Actions & Codespaces</span>
+                <span class="skill-tag"><i class="fa-brands fa-html5"></i> Web Development</span>
+            </div>
+        </section>
+
+        <!-- Featured Projects -->
+        <section id="projects" class="animate-on-scroll">
+            <h2><i class="fa-solid fa-diagram-project"></i> Featured Projects</h2>
+            
+            <div class="card project-card">
+                <div class="project-title">Connected Factory Solution</div>
+                <p>Designed and built an integrated IoT software architecture to collect, monitor, and process data streams from connected factory machinery.</p>
+            </div>
+
+            <div class="card project-card">
+                <div class="project-title">Enterprise ChatBot on Azure Bot Services</div>
+                <p>Developed an enterprise-grade conversational AI chatbot deployed on Microsoft Azure Bot Services to streamline internal workflows.</p>
+            </div>
+
+            <div class="card project-card">
+                <div class="project-title">Python-based Recommendation Engine</div>
+                <p>Engineered an intelligent recommendation system tailored for manufacturing plants to optimize production and predictive maintenance.</p>
+            </div>
+
+            <div class="card project-card">
+                <div class="project-title">PowerBI Dashboarding</div>
+                <p>Created interactive analytical dashboards in PowerBI to visualize key operational metrics and assist in business decision-making.</p>
+            </div>
+
+            <div class="card project-card">
+                <div class="project-title">Python Real-Time Dashboards</div>
+                <p>Built real-time data monitoring interfaces using Python frameworks to track system status and telemetry live.</p>
+            </div>
+        </section>
+
+        <!-- Currently Working On -->
+        <section id="current-focus" class="animate-on-scroll">
+            <h2><i class="fa-solid fa-bullseye"></i> Currently Working On</h2>
+            <div class="card">
+                <ul style="list-style-type: none; padding-left: 0;">
+                    <li style="margin-bottom: 0.5rem;"><i class="fa-solid fa-circle-check" style="color: var(--accent);"></i> Modern Web Development Technologies</li>
+                    <li style="margin-bottom: 0.5rem;"><i class="fa-solid fa-circle-check" style="color: var(--accent);"></i> Advanced Data Science Projects on Kaggle</li>
+                    <li style="margin-bottom: 0.5rem;"><i class="fa-solid fa-circle-check" style="color: var(--accent);"></i> Building Robust CI/CD Pipelines</li>
+                    <li style="margin-bottom: 0.5rem;"><i class="fa-solid fa-circle-check" style="color: var(--accent);"></i> Automation with GitHub Actions & Docker</li>
+                    <li><i class="fa-solid fa-circle-check" style="color: var(--accent);"></i> Cloud Workflows with GitHub Codespaces</li>
+                </ul>
+            </div>
+        </section>
     </div>
 
     <script src="script.js"></script>
-
 </body>
 </html>
