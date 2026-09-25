@@ -1,0 +1,25 @@
+{
+  "projects": [
+    {
+      "title": "Connected Factory Solution",
+      "description": "IoT and data engineering architecture for connected operations.",
+      "technologies": ["Python", "Azure", "IoT", "SQL"],
+      "category": "Data Engineering",
+      "featured": true
+    },
+    {
+      "title": "Enterprise Chatbot",
+      "description": "Conversational AI experience for enterprise users.",
+      "technologies": ["Python", "Azure Bot Services", "CI/CD"],
+      "category": "Artificial Intelligence",
+      "featured": true
+    },
+    {
+      "title": "Recommendation Engine",
+      "description": "Personalized recommendations supported by machine learning workflows.",
+      "technologies": ["Python", "Machine Learning", "Data Science"],
+      "category": "Data Science",
+      "featured": false
+    }
+  ]
+}

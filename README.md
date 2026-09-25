@@ -35,6 +35,7 @@ This portfolio highlights Himanshu's experience building practical software and 
 - Scroll-reveal animations
 - Project and technology showcase
 - Accessible navigation, labels, and external links
+- Dependency-free Python content validation and search toolkit
 - No build step or framework required
 
 ## Run locally
@@ -54,6 +55,15 @@ python -m http.server 8000
 
 Then open [http://localhost:8000](http://localhost:8000).
 
+### Run the Python toolkit
+
+The `python/` directory contains a standard-library-only module for validating, searching, and summarizing structured portfolio project content:
+
+```bash
+python -m unittest discover -s python -p 'test_*.py'
+python python/portfolio_data.py python/portfolio_content.json --output data/portfolio-summary.json
+```
+
 ## Project files
 
 | File | Description |
@@ -61,10 +71,13 @@ Then open [http://localhost:8000](http://localhost:8000).
 | `index.html` | Portfolio page structure and content |
 | `style.css` | Responsive layout, themes, animations, and visual styling |
 | `script.js` | Theme switching, saved preferences, scroll animations, and footer year |
+| `python/portfolio_data.py` | Typed Python content model, validation, search, and JSON export |
+| `python/portfolio_content.json` | Structured project and technology data |
+| `python/test_portfolio_data.py` | Automated tests for the Python toolkit |
 
 ## Deployment
 
-The site is deployed using **GitHub Pages** from the `master` branch. Changes pushed to that branch are automatically published after the Pages build completes.
+The site is deployed using **GitHub Pages** from the `master` branch. Changes pushed to that branch are automatically published after the Pages build completes. The Python toolkit runs locally or in CI to prepare content; GitHub Pages does not execute Python at request time.
 
 ## Connect
 
