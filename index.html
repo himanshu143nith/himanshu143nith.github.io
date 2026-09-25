@@ -5,10 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Himanshu Sharma — Software Engineer specializing in data engineering, data science, cloud, and IoT solutions.">
   <meta name="theme-color" content="#080b14">
+  <meta name="color-scheme" content="light dark">
   <title>Himanshu Sharma | Software Engineer</title>
+  
+  <!-- Preconnect to external resources -->
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="https://avatars.githubusercontent.com">
+  
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-p7QstZuTOa4G7K+sKigXMVkg2D08ZROv7+JGms5zi3zl2be6Xtbl3f3hWQBSTZ13b5HiB7ac0ea20pDf9M4GQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  
   <style>
     .skip-link { position: fixed; left: 1rem; top: -4rem; z-index: 100; padding: .7rem 1rem; border-radius: .5rem; background: var(--accent); color: #fff; transition: top .2s; }
     .skip-link:focus { top: 1rem; }
@@ -24,6 +31,16 @@
     .mini-link { display: flex; gap: .7rem; align-items: center; padding: .75rem 1rem; border: 1px solid var(--line); border-radius: 10px; color: var(--text); transition: transform .2s, border-color .2s; }
     .mini-link:hover, .mini-link:focus-visible { border-color: var(--accent-2); transform: translateX(4px); }
     .nav-toggle { display: none; }
+    #main-nav a { position: relative; display: inline-block; padding-bottom: .25rem; }
+    #main-nav a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--accent-2); transition: width .3s ease; }
+    #main-nav a:hover::after, #main-nav a.active::after { width: 100%; }
+    @media (max-width: 1024px) {
+      .hero { grid-template-columns: 1fr !important; gap: 3rem !important; }
+      .section { padding: 3rem 0; }
+      .section-heading { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .projects-grid { gap: 0.75rem; }
+      .profile-grid { gap: 0.75rem; }
+    }
     @media (max-width: 760px) {
       .site-header { position: relative; }
       .nav-toggle { display: inline-grid; place-items: center; width: 40px; height: 40px; margin-left: auto; margin-right: .5rem; border: 1px solid var(--line); border-radius: 50%; color: var(--text); background: transparent; cursor: pointer; transition: border-color .2s; }
@@ -31,7 +48,11 @@
       .site-header nav { display: none; position: absolute; top: 100%; left: 0; right: 0; z-index: 10; flex-direction: column; padding: .7rem; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
       .site-header nav.is-open { display: flex; }
       .site-header nav a { padding: .7rem 1rem; }
+      #main-nav a::after { display: none; }
       .profile-grid { grid-template-columns: 1fr; }
+      .hero { display: block; padding: 5rem 0 4rem; }
+      .hero-card { margin-top: 3.5rem; transform: none; }
+      .section { padding: 2rem 0; }
     }
   </style>
 </head>
@@ -44,7 +65,11 @@
     <a class="brand" href="#top" aria-label="Himanshu Sharma home">HS<span>.</span></a>
     <button class="nav-toggle" id="nav-toggle" type="button" aria-controls="main-nav" aria-expanded="false" aria-label="Open navigation"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
     <nav id="main-nav" aria-label="Main navigation">
-      <a href="#about">About</a><a href="#profile">Profile</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+      <a href="#about" data-section="about">About</a>
+      <a href="#profile" data-section="profile">Profile</a>
+      <a href="#skills" data-section="skills">Skills</a>
+      <a href="#projects" data-section="projects">Projects</a>
+      <a href="#contact" data-section="contact">Contact</a>
     </nav>
     <button id="theme-toggle" class="theme-btn" type="button" aria-label="Switch to light theme" title="Toggle theme"><i class="fa-solid fa-sun" aria-hidden="true"></i></button>
   </header>
@@ -53,7 +78,14 @@
     <section class="hero reveal">
       <div class="hero-copy">
         <div class="profile-photo-wrap">
-          <img class="profile-photo" src="https://avatars.githubusercontent.com/u/6632162?v=4" alt="Himanshu Sharma" width="168" height="168" fetchpriority="high">
+          <img class="profile-photo" 
+               src="https://avatars.githubusercontent.com/u/6632162?v=4&s=168" 
+               alt="Himanshu Sharma" 
+               width="168" 
+               height="168" 
+               fetchpriority="high"
+               decoding="async"
+               loading="eager">
           <p class="profile-photo-caption">Public GitHub avatar</p>
         </div>
         <p class="eyebrow"><span></span> Software engineer & problem solver</p>
