@@ -4,25 +4,37 @@ const navToggle = document.getElementById('nav-toggle');
 const mainNav = document.getElementById('main-nav');
 const searchToggle = document.getElementById('search-toggle');
 const scrollToTopBtn = document.getElementById('scroll-to-top');
-const savedTheme = localStorage.getItem('theme');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-if (savedTheme === 'light' || savedTheme === 'dark') {
-  root.dataset.theme = savedTheme;
+function setTheme(theme) {
+  root.dataset.theme = theme;
+  localStorage.setItem('theme', theme);
+  document.querySelector('meta[name="theme-color"]')?.setAttribute(
+    'content',
+    theme === 'light' ? '#f6f8fc' : '#080b14',
+  );
+}
+
+try {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'light' || savedTheme === 'dark') setTheme(savedTheme);
+} catch {
+  // Storage can be unavailable in privacy-restricted browser contexts.
 }
 
 function updateThemeButton() {
   if (!themeToggle) return;
 
   const light = root.dataset.theme === 'light';
-  themeToggle.setAttribute('aria-label', light ? 'Switch to dark theme' : 'Switch to light theme');
-  themeToggle.title = light ? 'Switch to dark theme' : 'Switch to light theme';
+  const label = light ? 'Switch to dark theme' : 'Switch to light theme';
+  themeToggle.setAttribute('aria-label', label);
+  themeToggle.title = label;
   themeToggle.innerHTML = `<i class="fa-solid fa-${light ? 'moon' : 'sun'}" aria-hidden="true"></i>`;
 }
 
 if (themeToggle) {
   themeToggle.addEventListener('click', () => {
-    root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
-    localStorage.setItem('theme', root.dataset.theme);
+    setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark');
     updateThemeButton();
   });
 }
@@ -53,9 +65,7 @@ if (navToggle && mainNav) {
       mainNav.classList.contains('is-open') &&
       !mainNav.contains(event.target) &&
       !navToggle.contains(event.target)
-    ) {
-      closeNavigation();
-    }
+    ) closeNavigation();
   });
 
   document.addEventListener('keydown', (event) => {
@@ -65,43 +75,41 @@ if (navToggle && mainNav) {
     }
   });
 
-  window.matchMedia('(min-width: 761px)').addEventListener('change', (event) => {
+  const closeOnDesktop = (event) => {
     if (event.matches) closeNavigation();
-  });
+  };
+  const mediaQuery = window.matchMedia('(min-width: 761px)');
+  if (mediaQuery.addEventListener) mediaQuery.addEventListener('change', closeOnDesktop);
+  else mediaQuery.addListener(closeOnDesktop);
 }
 
 if (searchToggle) {
   searchToggle.addEventListener('click', () => {
-    document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('skills')?.scrollIntoView({
+      behavior: prefersReducedMotion.matches ? 'auto' : 'smooth',
+    });
     searchToggle.blur();
   });
 }
 
 if (scrollToTopBtn) {
-  window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 300) {
-      scrollToTopBtn.classList.add('visible');
-    } else {
-      scrollToTopBtn.classList.remove('visible');
-    }
-  });
+  const updateScrollButton = () => {
+    scrollToTopBtn.classList.toggle('visible', window.scrollY > 300);
+  };
+  window.addEventListener('scroll', updateScrollButton, { passive: true });
+  updateScrollButton();
 
   scrollToTopBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: prefersReducedMotion.matches ? 'auto' : 'smooth' });
   });
 }
 
 updateThemeButton();
 
-const yearNode = document.getElementById('year');
-if (yearNode) {
-  yearNode.textContent = new Date().getFullYear();
-}
+document.getElementById('year')?.replaceChildren(String(new Date().getFullYear()));
 
 const revealElements = document.querySelectorAll('.reveal');
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+if (prefersReducedMotion.matches || !('IntersectionObserver' in window)) {
   revealElements.forEach((element) => element.classList.add('visible'));
 } else {
   const observer = new IntersectionObserver((entries, currentObserver) => {
@@ -129,12 +137,8 @@ if ('IntersectionObserver' in window && sectionLinks.length) {
       sectionLinks.forEach((link) => {
         const active = link.dataset.section === entry.target.id;
         link.classList.toggle('active', active);
-
-        if (active) {
-          link.setAttribute('aria-current', 'location');
-        } else {
-          link.removeAttribute('aria-current');
-        }
+        if (active) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
       });
     });
   }, { rootMargin: '-25% 0px -65% 0px', threshold: 0 });
