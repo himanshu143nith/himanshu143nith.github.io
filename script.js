@@ -1,10 +1,10 @@
 const root = document.documentElement;
 const themeToggle = document.getElementById('theme-toggle');
+const navToggle = document.getElementById('nav-toggle');
+const mainNav = document.getElementById('main-nav');
 const savedTheme = localStorage.getItem('theme');
 
-if (savedTheme === 'light' || savedTheme === 'dark') {
-  root.dataset.theme = savedTheme;
-}
+if (savedTheme === 'light' || savedTheme === 'dark') root.dataset.theme = savedTheme;
 
 function updateThemeButton() {
   const light = root.dataset.theme === 'light';
@@ -17,6 +17,20 @@ themeToggle.addEventListener('click', () => {
   localStorage.setItem('theme', root.dataset.theme);
   updateThemeButton();
 });
+
+navToggle.addEventListener('click', () => {
+  const open = mainNav.classList.toggle('is-open');
+  navToggle.setAttribute('aria-expanded', String(open));
+  navToggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+  navToggle.innerHTML = `<i class="fa-solid fa-${open ? 'xmark' : 'bars'}" aria-hidden="true"></i>`;
+});
+
+document.querySelectorAll('#main-nav a').forEach((link) => link.addEventListener('click', () => {
+  mainNav.classList.remove('is-open');
+  navToggle.setAttribute('aria-expanded', 'false');
+  navToggle.setAttribute('aria-label', 'Open navigation');
+  navToggle.innerHTML = '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
+}));
 
 updateThemeButton();
 document.getElementById('year').textContent = new Date().getFullYear();
