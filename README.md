@@ -1,2 +1,77 @@
-# himanshu143nith.github.io
-This is a readme file.
+# Himanshu Sharma — Portfolio
+
+Personal portfolio website for **Himanshu Sharma**, a software engineer focused on data engineering, data science, cloud platforms, automation, and connected systems.
+
+🌐 **Live site:** [himanshu143nith.github.io](https://himanshu143nith.github.io)
+
+## About
+
+This portfolio highlights Himanshu's experience building practical software and data solutions, including:
+
+- Connected factory and IoT architectures
+- Data engineering and analytics workflows
+- Enterprise conversational AI on Azure Bot Services
+- Python-based recommendation systems
+- Power BI and real-time monitoring dashboards
+- CI/CD automation with GitHub Actions and Docker
+
+## Technologies
+
+- Python
+- Data Engineering and SQL
+- Data Science and Machine Learning
+- Microsoft Azure
+- Docker
+- GitHub Actions and CI/CD
+- IoT systems
+- HTML, CSS, and JavaScript
+- Power BI
+
+## Features
+
+- Responsive portfolio layout for desktop and mobile
+- Dark and light theme toggle
+- Theme preference saved in local storage
+- Scroll-reveal animations
+- Project and technology showcase
+- Accessible navigation, labels, and external links
+- No build step or framework required
+
+## Run locally
+
+This is a static website, so it can be opened directly in a browser or served with any local HTTP server.
+
+```bash
+git clone https://github.com/himanshu143nith/himanshu143nith.github.io.git
+cd himanshu143nith.github.io
+```
+
+For example, with Python:
+
+```bash
+python -m http.server 8000
+```
+
+Then open [http://localhost:8000](http://localhost:8000).
+
+## Project files
+
+| File | Description |
+| --- | --- |
+| `index.html` | Portfolio page structure and content |
+| `style.css` | Responsive layout, themes, animations, and visual styling |
+| `script.js` | Theme switching, saved preferences, scroll animations, and footer year |
+
+## Deployment
+
+The site is deployed using **GitHub Pages** from the `master` branch. Changes pushed to that branch are automatically published after the Pages build completes.
+
+## Connect
+
+- [GitHub](https://github.com/himanshu143nith)
+- [Kaggle](https://www.kaggle.com/himanshusharma713)
+- [Twitter](https://twitter.com/Himanshu143nith)
+
+## License
+
+The source code is available for personal reference and portfolio use.
