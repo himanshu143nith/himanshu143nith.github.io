@@ -1,10 +1,33 @@
-document.getElementById("twitterButton").onclick=function(){
-    document.getElementById("twitterButton").innerHTML = "https://twitter.com/Himanshu143nith";
+const root = document.documentElement;
+const themeToggle = document.getElementById('theme-toggle');
+const savedTheme = localStorage.getItem('theme');
+
+if (savedTheme === 'light' || savedTheme === 'dark') {
+  root.dataset.theme = savedTheme;
 }
 
-document.getElementById("githubButton").onclick=function(){
-    document.getElementById("githubButton").innerHTML = "https://github.com/himanshu143nith";
+function updateThemeButton() {
+  const light = root.dataset.theme === 'light';
+  themeToggle.setAttribute('aria-label', light ? 'Switch to dark theme' : 'Switch to light theme');
+  themeToggle.innerHTML = `<i class="fa-solid fa-${light ? 'moon' : 'sun'}" aria-hidden="true"></i>`;
 }
-document.getElementById("kaggleButton").onclick=function(){
-    document.getElementById("kaggleButton").innerHTML = "https://www.kaggle.com/himanshusharma713";
-}
+
+themeToggle.addEventListener('click', () => {
+  root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+  localStorage.setItem('theme', root.dataset.theme);
+  updateThemeButton();
+});
+
+updateThemeButton();
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));

@@ -1,96 +1,92 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Himanshu Sharma | Portfolio</title>
-  <!--  <link rel="stylesheet" href="style.css"> -->
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Himanshu Sharma — Software Engineer specializing in data engineering, data science, cloud, and IoT solutions.">
+  <title>Himanshu Sharma | Software Engineer</title>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+  <div class="background-glow glow-one" aria-hidden="true"></div>
+  <div class="background-glow glow-two" aria-hidden="true"></div>
 
-    <!-- Theme Toggle Button -->
-    <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
-        <i class="fa-solid fa-moon"></i>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Himanshu Sharma home">HS<span>.</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button id="theme-toggle" class="theme-btn" type="button" aria-label="Switch to light theme" title="Toggle theme">
+      <i class="fa-solid fa-sun" aria-hidden="true"></i>
     </button>
+  </header>
 
-    <div class="container">
-        <!-- Header / Hero Section -->
-        <header class="animate-on-scroll">
-            <h1>Himanshu Sharma</h1>
-            <p class="subtitle">Software Engineer | Data Engineering & Data Science</p>
-        </header>
+  <main id="top" class="container">
+    <section class="hero reveal">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> Software engineer & problem solver</p>
+        <h1>Building useful products with <em>data</em> and code.</h1>
+        <p class="hero-text">I'm Himanshu Sharma, a software engineer focused on data engineering, data science, cloud platforms, and connected systems.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projects">Explore my work <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          <a class="button button-secondary" href="mailto:himanshusharma713@gmail.com">Let's connect</a>
+        </div>
+        <div class="social-links" aria-label="Social links">
+          <a href="https://github.com/himanshu143nith" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.kaggle.com/himanshusharma713" target="_blank" rel="noopener noreferrer" aria-label="Kaggle"><i class="fa-brands fa-kaggle"></i></a>
+          <a href="https://twitter.com/Himanshu143nith" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+      </div>
+      <div class="hero-card" aria-label="Professional focus">
+        <div class="status"><span></span> Available for opportunities</div>
+        <div class="code-window">
+          <div class="window-bar"><span></span><span></span><span></span><b>himanshu.py</b></div>
+          <pre><code><i>class</i> <strong>Engineer</strong>:
+    focus = [
+        <u>"data"</u>, <u>"cloud"</u>,
+        <u>"automation"</u>
+    ]
 
-        <!-- About Me / Career Objective -->
-        <section id="objective" class="animate-on-scroll">
-            <h2><i class="fa-solid fa-user-gear"></i> About Me</h2>
-            <div class="card">
-                <p>Himanshu Sharma is a software engineer with 3 years of experience in Data Engineering and Data Science. He has previously worked on multiple software projects related to data science and software programming. He likes to code in Python and has extensive experience with databases, Cloud Services, DevOps, Soft Computing, Internet of Things, AI, and Web Development.</p>
-            </div>
-        </section>
+    <i>def</i> <strong>build</strong>(self, idea):
+        <i>return</i> idea.scale()</code></pre>
+        </div>
+      </div>
+    </section>
 
-        <!-- Skills & Technologies -->
-        <section id="technologies" class="animate-on-scroll">
-            <h2><i class="fa-solid fa-code"></i> Technologies & Expertise</h2>
-            <div class="skills-grid">
-                <span class="skill-tag"><i class="fa-brands fa-python"></i> Python</span>
-                <span class="skill-tag"><i class="fa-solid fa-database"></i> Databases</span>
-                <span class="skill-tag"><i class="fa-solid fa-cloud"></i> Cloud Services & Azure</span>
-                <span class="skill-tag"><i class="fa-solid fa-infinity"></i> DevOps & CI/CD</span>
-                <span class="skill-tag"><i class="fa-brands fa-docker"></i> Docker</span>
-                <span class="skill-tag"><i class="fa-solid fa-brain"></i> AI & Data Science</span>
-                <span class="skill-tag"><i class="fa-solid fa-microchip"></i> Internet of Things (IoT)</span>
-                <span class="skill-tag"><i class="fa-brands fa-github"></i> GitHub Actions & Codespaces</span>
-                <span class="skill-tag"><i class="fa-brands fa-html5"></i> Web Development</span>
-            </div>
-        </section>
+    <section id="about" class="section reveal">
+      <div class="section-heading"><p class="eyebrow">01 / About me</p><h2>Turning complex data into <span>clear outcomes.</span></h2></div>
+      <div class="about-grid">
+        <p>With 3 years of experience across data engineering and data science, I design reliable systems that turn information into action. My work spans connected factories, conversational AI, recommendation systems, and analytics.</p>
+        <p>I enjoy solving practical problems with thoughtful architecture, clean code, and a strong bias toward automation. I am currently exploring modern web development, advanced data science, and robust cloud workflows.</p>
+      </div>
+    </section>
 
-        <!-- Featured Projects -->
-        <section id="projects" class="animate-on-scroll">
-            <h2><i class="fa-solid fa-diagram-project"></i> Featured Projects</h2>
-            
-            <div class="card project-card">
-                <div class="project-title">Connected Factory Solution</div>
-                <p>Designed and built an integrated IoT software architecture to collect, monitor, and process data streams from connected factory machinery.</p>
-            </div>
+    <section id="skills" class="section reveal">
+      <div class="section-heading"><p class="eyebrow">02 / Toolkit</p><h2>Technologies I work with.</h2></div>
+      <div class="skills-grid">
+        <span class="skill-tag"><i class="fa-brands fa-python"></i> Python</span><span class="skill-tag"><i class="fa-solid fa-database"></i> Data & SQL</span><span class="skill-tag"><i class="fa-solid fa-cloud"></i> Azure & Cloud</span><span class="skill-tag"><i class="fa-solid fa-infinity"></i> CI/CD</span><span class="skill-tag"><i class="fa-brands fa-docker"></i> Docker</span><span class="skill-tag"><i class="fa-solid fa-brain"></i> Data Science</span><span class="skill-tag"><i class="fa-solid fa-microchip"></i> IoT</span><span class="skill-tag"><i class="fa-brands fa-github"></i> GitHub Actions</span><span class="skill-tag"><i class="fa-brands fa-html5"></i> Web Development</span>
+      </div>
+    </section>
 
-            <div class="card project-card">
-                <div class="project-title">Enterprise ChatBot on Azure Bot Services</div>
-                <p>Developed an enterprise-grade conversational AI chatbot deployed on Microsoft Azure Bot Services to streamline internal workflows.</p>
-            </div>
+    <section id="projects" class="section reveal">
+      <div class="section-heading"><p class="eyebrow">03 / Selected work</p><h2>Projects with real-world impact.</h2></div>
+      <div class="projects-grid">
+        <article class="project-card featured"><div class="project-icon"><i class="fa-solid fa-industry"></i></div><p class="project-number">01</p><h3>Connected Factory Solution</h3><p>Integrated IoT architecture to collect, monitor, and process data streams from connected factory machinery.</p><div class="project-tags"><span>IoT</span><span>Data Engineering</span></div></article>
+        <article class="project-card"><div class="project-icon"><i class="fa-solid fa-comments"></i></div><p class="project-number">02</p><h3>Enterprise Chatbot</h3><p>Conversational AI deployed on Azure Bot Services to streamline internal workflows.</p><div class="project-tags"><span>Azure</span><span>AI</span></div></article>
+        <article class="project-card"><div class="project-icon"><i class="fa-solid fa-chart-line"></i></div><p class="project-number">03</p><h3>Recommendation Engine</h3><p>Intelligent recommendations for manufacturing plants to improve production and predictive maintenance.</p><div class="project-tags"><span>Python</span><span>ML</span></div></article>
+        <article class="project-card"><div class="project-icon"><i class="fa-solid fa-gauge-high"></i></div><p class="project-number">04</p><h3>Analytics & Dashboards</h3><p>Interactive Power BI and Python dashboards for operational metrics, telemetry, and decision-making.</p><div class="project-tags"><span>Power BI</span><span>Real-time</span></div></article>
+      </div>
+    </section>
 
-            <div class="card project-card">
-                <div class="project-title">Python-based Recommendation Engine</div>
-                <p>Engineered an intelligent recommendation system tailored for manufacturing plants to optimize production and predictive maintenance.</p>
-            </div>
+    <section id="contact" class="contact-card reveal"><div><p class="eyebrow">04 / What's next</p><h2>Have a challenge in mind?</h2><p>Let's build something reliable, useful, and a little bit delightful.</p></div><a class="button button-primary" href="mailto:himanshusharma713@gmail.com">Get in touch <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></section>
+  </main>
 
-            <div class="card project-card">
-                <div class="project-title">PowerBI Dashboarding</div>
-                <p>Created interactive analytical dashboards in PowerBI to visualize key operational metrics and assist in business decision-making.</p>
-            </div>
-
-            <div class="card project-card">
-                <div class="project-title">Python Real-Time Dashboards</div>
-                <p>Built real-time data monitoring interfaces using Python frameworks to track system status and telemetry live.</p>
-            </div>
-        </section>
-
-        <!-- Currently Working On -->
-        <section id="current-focus" class="animate-on-scroll">
-            <h2><i class="fa-solid fa-bullseye"></i> Currently Working On</h2>
-            <div class="card">
-                <ul style="list-style-type: none; padding-left: 0;">
-                    <li style="margin-bottom: 0.5rem;"><i class="fa-solid fa-circle-check" style="color: var(--accent);"></i> Modern Web Development Technologies</li>
-                    <li style="margin-bottom: 0.5rem;"><i class="fa-solid fa-circle-check" style="color: var(--accent);"></i> Advanced Data Science Projects on Kaggle</li>
-                    <li style="margin-bottom: 0.5rem;"><i class="fa-solid fa-circle-check" style="color: var(--accent);"></i> Building Robust CI/CD Pipelines</li>
-                    <li style="margin-bottom: 0.5rem;"><i class="fa-solid fa-circle-check" style="color: var(--accent);"></i> Automation with GitHub Actions & Docker</li>
-                    <li><i class="fa-solid fa-circle-check" style="color: var(--accent);"></i> Cloud Workflows with GitHub Codespaces</li>
-                </ul>
-            </div>
-        </section>
-    </div>
-
- <!--   <script src="script.js"></script> -->
+  <footer><p>© <span id="year"></span> Himanshu Sharma</p><p>Designed & built with curiosity.</p></footer>
+  <script src="script.js" defer></script>
 </body>
 </html>
