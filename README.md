@@ -82,8 +82,10 @@ The site is deployed using **GitHub Pages** from the `master` branch. Changes pu
 ## Connect
 
 - [GitHub](https://github.com/himanshu143nith)
+- [LinkedIn](https://www.linkedin.com/in/himanshu143nith)
 - [Kaggle](https://www.kaggle.com/himanshusharma713)
-- [Twitter](https://twitter.com/Himanshu143nith)
+- [X](https://x.com/himanshu143nith)
+- [Email](mailto:himanshusharma713@gmail.com)
 
 ## License
 
